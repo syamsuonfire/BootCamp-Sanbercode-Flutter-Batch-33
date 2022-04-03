@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatefulWidget {
+  const DrawerScreen({Key? key}) : super(key: key);
+
   @override
-  _DrawerScreenState createState() => _DrawerScreenState();
+  State<DrawerScreen> createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
@@ -11,48 +13,44 @@ class _DrawerScreenState extends State<DrawerScreen> {
     return Drawer(
       child: ListView(
         children: [
-          UserAccountsDrawerHeader(
-            accountName: Text("Akbar Maulana Alfatih"),
+          const UserAccountsDrawerHeader(
+            accountName: Text("Achmad Hilmy "),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage("assets/img/profil.jpg"),
+              backgroundImage: AssetImage("assets/syamsu.jpg"),
             ),
-            accountEmail: Text("akbarma2002@gmail.com"),
+            accountEmail: Text("hilmy@gmail.com"),
           ),
           DrawerListTile(
-            key: null,
             iconData: Icons.group,
             title: "New Group",
             onTilePressed: () {},
           ),
           DrawerListTile(
-            key: null,
-            iconData: Icons.lock,
-            title: "New Secret Group",
+            iconData: Icons.group,
+            title: "New Group",
             onTilePressed: () {},
           ),
           DrawerListTile(
-            key: null,
-            iconData: Icons.notifications,
-            title: "New Channel Chat",
+            iconData: Icons.group,
+            title: "New Group",
             onTilePressed: () {},
           ),
           DrawerListTile(
-            key: null,
-            iconData: Icons.contacts,
-            title: "Contacts",
+            iconData: Icons.group,
+            title: "New Group",
             onTilePressed: () {},
           ),
           DrawerListTile(
-            key: null,
-            iconData: Icons.bookmark_border,
-            title: "Saved Message",
+            iconData: Icons.group,
+            title: "New Group",
             onTilePressed: () {},
           ),
           DrawerListTile(
-            key: null,
-            iconData: Icons.phone,
-            title: "Calls",
-            onTilePressed: () {},
+            iconData: Icons.group,
+            title: "New Group",
+            onTilePressed: () {
+              print("object");
+            },
           ),
         ],
       ),
@@ -62,14 +60,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
 class DrawerListTile extends StatelessWidget {
   final IconData iconData;
-  final String title;
-  final VoidCallback onTilePressed;
+  final String? title;
+  final VoidCallback? onTilePressed;
 
   DrawerListTile({
     Key? key,
     required this.iconData,
-    required this.title,
-    required this.onTilePressed,
+    this.onTilePressed,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -79,7 +77,7 @@ class DrawerListTile extends StatelessWidget {
       dense: true,
       leading: Icon(iconData),
       title: Text(
-        title,
+        title!,
         style: TextStyle(fontSize: 16),
       ),
     );

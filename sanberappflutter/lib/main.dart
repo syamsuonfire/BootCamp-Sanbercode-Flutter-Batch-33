@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/Tugas/Tugas13/LoginScreen.dart';
-// import 'package:sanberappflutter/Tugas/Tugas11/Telegram.dart';
+import 'package:sanberappflutter/tugas/tugas_11/telegram_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const TelegramScreen(),
     );
   }
 }

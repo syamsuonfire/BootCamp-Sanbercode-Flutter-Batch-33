@@ -4,12 +4,7 @@ class ChartModel {
   final String? time;
   final String? profileUrl;
 
-  ChartModel({
-    required this.name,
-    required this.message,
-    required this.time,
-    required this.profileUrl,
-  });
+  ChartModel({this.name, this.message, this.time, this.profileUrl});
 }
 
 final List<ChartModel> items = [
