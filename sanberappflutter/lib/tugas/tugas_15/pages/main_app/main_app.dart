@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/tugas/tugas13/drawer_screen.dart';
-import 'package:sanberappflutter/tugas/tugas13/home_screen.dart';
+import 'package:sanberappflutter/tugas/tugas_15/pages/main_app/home_screen.dart';
 
-class MainApp13 extends StatefulWidget {
-  const MainApp13({Key? key}) : super(key: key);
+class MainApp extends StatefulWidget {
+  MainApp({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<MainApp13> createState() => _MainApp13State();
+  State<MainApp> createState() => _MainAppState();
 }
 
-class _MainApp13State extends State<MainApp13> {
+class _MainAppState extends State<MainApp> {
+  late String? emailSend = "";
+
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
+
+  static TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    // Text(
-    //   'Index 0: Home',
-    //   style: optionStyle,
-    // ),
+  // ignore: prefer_final_fields
+  List _widgetOptions = [
     HomeScreen(),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
+      "Index 1: Business tampung  ",
+      // style: optionStyle,
     ),
     Text(
       'Index 2: School',
@@ -38,7 +39,6 @@ class _MainApp13State extends State<MainApp13> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerScreen13(),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

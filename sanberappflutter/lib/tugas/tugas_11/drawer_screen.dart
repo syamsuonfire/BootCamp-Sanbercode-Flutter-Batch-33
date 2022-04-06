@@ -14,11 +14,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
       child: ListView(
         children: [
           const UserAccountsDrawerHeader(
-            accountName: Text("Achmad Hilmy "),
+            accountName: Text("Syamsu Rijal Efendi"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage("assets/syamsu.jpg"),
             ),
-            accountEmail: Text("hilmy@gmail.com"),
+            accountEmail: Text("syamsuefendi@gmail.com"),
           ),
           DrawerListTile(
             iconData: Icons.group,
